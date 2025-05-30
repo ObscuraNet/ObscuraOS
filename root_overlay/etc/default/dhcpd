@@ -1,0 +1,1 @@
+OPTIONS='-cf /etc/dhcp/dhcp.conf'

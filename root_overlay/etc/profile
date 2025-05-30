@@ -1,0 +1,89 @@
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+if [ "$PS1" ]; then
+        if [ "`id -u`" -eq 0 ]; then
+                export PS1='# '
+        else
+                export PS1='$ '
+        fi
+fi
+
+export EDITOR='/bin/vi'
+
+# Source configuration files from /etc/profile.d
+for i in /etc/profile.d/*.sh ; do
+        if [ -r "$i" ]; then
+                . $i
+        fi
+done
+unset i
+
+
+
+# /etc/profile (or /etc/profile.d/99-welcome.sh)
+
+#–– Color definitions ––#
+RED="\[\e[31m\]"
+GREEN="\[\e[32m\]"
+YELLOW="\[\e[33m\]"
+CYAN="\[\e[36m\]"
+RESET="\[\e[0m\]"
+
+#–– Your prompt ––#
+export PS1="${GREEN}\u@\h ${CYAN}\w${RESET} \$ "
+
+#–– only for interactive shells ––#
+[[ $- != *i* ]] && return
+
+#–– Color definitions ––#
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+CYAN="\e[36m"
+RESET="\e[0m"
+
+cat << 'EOF'
+
+-------------------------------------------------------------------------,
+[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [
+-----------------------------------------------------------------------/
+      \|/ | O -   ^^         |                  |           _   _     |
+     --O--|/ \        O  ^^  |   ^^   |||||     |     ___  ( ) ( )   _/ 
+ /\   /|\ |         --|--    | ^^     |O=O|     |_ __/_|_\,_|___|___/  
+/  \/\    |~~~~~~~~~~~|~~~~~~|        ( - )     | `-O---O-'       |
+  /\  \/\_|          / \     |       .-~~~-.    | -- -- -- -- -- /
+ /  /\ \  |         '   `    |      //| o |\\   |______________ |
+--------------------------------------------------------------_/
+[] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] ['
+------------------------------------------------------------'                                                                
+                                                                               
+     OOOOOOOOO     BBBBBBBBBBBBBBBBB      SSSSSSSSSSSSSSS         CCCCCCCCCCCCC
+   OO:::::::::OO   B::::::::::::::::B   SS:::::::::::::::S     CCC::::::::::::C
+ OO:::::::::::::OO B::::::BBBBBB:::::B S:::::SSSSSS::::::S   CC:::::::::::::::C
+O:::::::OOO:::::::OBB:::::B     B:::::BS:::::S     SSSSSSS  C:::::CCCCCCCC::::C
+O::::::O   O::::::O  B::::B     B:::::BS:::::S             C:::::C       CCCCCC
+O:::::O     O:::::O  B::::B     B:::::BS:::::S            C:::::C              
+O:::::O     O:::::O  B::::BBBBBB:::::B  S::::SSSS         C:::::C              
+O:::::O     O:::::O  B:::::::::::::BB    SS::::::SSSSS    C:::::C              
+O:::::O     O:::::O  B::::BBBBBB:::::B     SSS::::::::SS  C:::::C              
+O:::::O     O:::::O  B::::B     B:::::B       SSSSSS::::S C:::::C              
+O:::::O     O:::::O  B::::B     B:::::B            S:::::SC:::::C              
+O::::::O   O::::::O  B::::B     B:::::B            S:::::S C:::::C       CCCCCC
+O:::::::OOO:::::::OBB:::::BBBBBB::::::BSSSSSSS     S:::::S  C:::::CCCCCCCC::::C
+ OO:::::::::::::OO B:::::::::::::::::B S::::::SSSSSS:::::S   CC:::::::::::::::C
+   OO:::::::::OO   B::::::::::::::::B  S:::::::::::::::SS      CCC::::::::::::C
+     OOOOOOOOO     BBBBBBBBBBBBBBBBB    SSSSSSSSSSSSSSS           CCCCCCCCCCCCC
+                                                                                  
+EOF
+
+#–– greeting ––#
+echo -e "${YELLOW}Welcome, ${USER}!${RESET}"
+echo -e "${YELLOW}Today is $(date '+%A, %B %-d, %Y')   Current time: $(date '+%T %Z')${RESET}"
+
+#–– some system stats ––#
+echo -e "${CYAN}Uptime: $(uptime)${RESET}"
+
+#–– disk & memory ––#
+root_used=$(df -h / | awk 'NR==2{print $5}')
+mem_used=$(free -h | awk '/^Mem:/ {print $3 " used of " $2}')
+echo -e "${CYAN}Disk / usage: ${root_used}   RAM usage: ${mem_used}${RESET}"

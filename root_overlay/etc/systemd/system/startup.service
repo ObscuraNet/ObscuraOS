@@ -1,0 +1,10 @@
+[Unit]
+Description=Run startup script at boot.
+
+[Service]
+Type=oneshot
+ExecStart=/obsc/scripts/startup.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
