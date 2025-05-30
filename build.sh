@@ -178,8 +178,5 @@ sudo rm -r $OUTPUT/$VERSION.boot_a.vfat
 sudo rm -r $OUTPUT/$VERSION.boot_b.vfat
 sudo rm -r $OUTPUT/$VERSION.boot_update.vfat
 sudo rm -r $OUTPUT/$VERSION.root.ext4
-sudo rm -r *
-git restore .
-cd ..
 sudo rm -r $DYNAMIC/*
 echo $COMMIT_VERSION

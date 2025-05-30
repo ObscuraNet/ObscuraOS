@@ -4,7 +4,7 @@
 ### Setup Build System
 
 ```
-git clone https://github.com/ObscuraNet/ObscuraOS.git
+git clone --recurse-submodules https://github.com/ObscuraNet/ObscuraOS.git
 cd ObscuraOS
 git submodule init
 git submodule update
