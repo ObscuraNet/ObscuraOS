@@ -1,1 +1,1 @@
-sudo apt install sed make binutils gcc g++ bash patch gzip bzip2 perl tar cpio python-is-python3 unzip rsync wget libncurses-dev genimage
+sudo apt install sed make binutils gcc g++ bash patch gzip bzip2 perl tar cpio python-is-python3 unzip rsync wget libncurses-dev genimage zip
