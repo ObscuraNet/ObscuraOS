@@ -17,7 +17,7 @@ ROOT=$OS_DIR/root_overlay
 DYNAMIC=$OS_DIR/dynamic
 BOOT=$OS_DIR/boot_overlay
 OUTPUT=$OS_DIR/output
-CONFIG_DIR=$OS_DIR/configs
+CONFIG_DIR=$OS_DIR/config
 
 
 VFATFS=$BUILDROOT/output/images/boot.vfat
