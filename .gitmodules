@@ -2,3 +2,4 @@
 	path = buildroot
 	url = https://github.com/buildroot/buildroot.git
 	branch = 46fa2fcb7a
+	ignore = dirty
