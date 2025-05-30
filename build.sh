@@ -25,7 +25,7 @@ EXTFS=$BUILDROOT/output/images/rootfs.ext4
 
 #Config/Update Files
 GENIMAGE_CFG=$CONFIG_DIR/genimage.cfg
-UPDATE=$CONFIG_DIR/updateFirmware
+UPDATE=$CONFIG_DIR/updateFirmware.sh
 
 #Dynamic Directories
 DY_UTILS=$DYNAMIC/obsc/utils/
@@ -127,8 +127,7 @@ sudo rm $BOOT_B/cmdline.txt && sudo rm $BOOT_B/autoboot.txt && sudo rm $BOOT_B/c
 sudo cp $BOOT/cmdline_a.txt $BOOT_A/cmdline.txt && sudo cp $BOOT/cmdline_b.txt $BOOT_B/cmdline.txt
 sudo cp $BOOT/config.txt $BOOT_UPDATE/ && sudo cp $BOOT/config.txt $BOOT_A/ && sudo cp $BOOT/config.txt $BOOT_B/
 sudo cp $BOOT/autoboot.txt $BOOT_A/
-sudo cp $BOOT/fixup4.dat $BOOT_A/ && sudo cp $BOOT/fixup4.dat $BOOT_B/ && sudo cp $BOOT/fixup4.dat $BOOT_UPDATE/
-sudo cp $BOOT/start4.elf $BOOT_A/ && sudo cp $BOOT/start4.elf $BOOT_B/ && sudo cp $BOOT/start4.elf $BOOT_UPDATE/
+
 
 sudo umount $BOOT_A
 sudo umount $BOOT_B
