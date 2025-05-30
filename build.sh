@@ -36,7 +36,7 @@ DY_UTILS=$DYNAMIC/obsc/utils/
 if [ ! -f "$OUTPUT/$VERSION" ]; then
     echo "BUILDROOT WILL BUILD FROM SCRATCH"
     sudo ls .
-    cp $CONFIG_DIR/pi_stock_gaenimage.cfg.in  $BUILDROOT/board/raspberrypi/genimage.cfg.in
+    cp $CONFIG_DIR/pi_stock_genimage.cfg.in  $BUILDROOT/board/raspberrypi/genimage.cfg.in
     cp "$CONFIG_DIR/BUILDROOT.cfg" "$BUILDROOT/.config"
     cp "$CONFIG_DIR/linux.config" $BUILDROOT/
     cp -rf $PATCHES_DIR $BUILDROOT/
