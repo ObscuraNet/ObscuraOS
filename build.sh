@@ -39,7 +39,6 @@ if [ ! -f "$OUTPUT/$VERSION" ]; then
     cp $CONFIG_DIR/pi_stock_genimage.cfg.in  $BUILDROOT/board/raspberrypi/genimage.cfg.in
     cp "$CONFIG_DIR/BUILDROOT.cfg" "$BUILDROOT/.config"
     cp "$CONFIG_DIR/linux.config" $BUILDROOT/
-    cp -rf $PATCHES_DIR $BUILDROOT/
     # BUILDROOT
     echo "Building Base Buildroot System"
     cd buildroot && . utils/add-custom-hashes
