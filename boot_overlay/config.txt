@@ -13,11 +13,13 @@ kernel=Image
 # Enable UART0 for serial console on ttyAMA0
 dtoverlay=miniuart-bt
 
+#Enable Camera Support
+camera_auto_detect=1
+dtparam=i2c_arm=on
+dtoverlay=imx708
 
-#Setting gpu_mem to 16 puts the gpu into a limited mode.
-gpu_mem=16
-disable_fw_kms_setup=1
-enable_tvout=0
+
+
 
 
 # enable 64bits support
