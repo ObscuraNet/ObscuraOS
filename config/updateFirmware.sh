@@ -79,6 +79,5 @@ elif [[ $INACTIVE_BOOT == "b" ]]; then
 fi
 umount $MOUNT_POINT
 LOG_MSG="Finished with cmdline.txt, rebooting next"
-echo $LOG_MSG && logger  $LOG_MSG
-
+echo $LOG_MSG && logger $LOG_MSG
 set +e
