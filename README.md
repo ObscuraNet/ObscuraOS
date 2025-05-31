@@ -1,4 +1,7 @@
 # ObscuraOS
+An operating system for motion detection cameras build using Raspberry Pi CM4, and Raspberry Pi Camera modules.
+Build system is buildroot, with a custom overlay to provide fail-safe firmware updates using 2 seperate boot/root partitions.
+Not intended to store footage locally, but send the footage to a remote server for storage.
 
 
 
