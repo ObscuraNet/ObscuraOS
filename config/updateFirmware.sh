@@ -81,5 +81,4 @@ umount $MOUNT_POINT
 LOG_MSG="Finished with cmdline.txt, rebooting next"
 echo $LOG_MSG && logger  $LOG_MSG
 
-LOG_TAG=$_LOG_TAG
 set +e

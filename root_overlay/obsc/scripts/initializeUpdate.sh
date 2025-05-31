@@ -36,6 +36,5 @@ if [[ $? -ne 0 ]]; then
 else
     rm -r $UPDATE_DIR
     LOG_MSG="UPDATE SUCCESSFUL, Rebooting Now"
-    logger  $LOG_TAG && echo $LOG_MSG
+    logger  $LOG_MSG && echo $LOG_MSG
 fi
-LOG_TAG=$_LOG_TAG

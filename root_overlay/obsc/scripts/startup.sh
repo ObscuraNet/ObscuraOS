@@ -2,7 +2,7 @@
 
 logger -p 1 "Checking for update TAG in filesystem"
 if [[ -f /UPDATE ]]; then
-    . /glct/scripts/verifyUpdate
+    . /obsc/scripts/verifyUpdate.sh
 else
     logger -p 1 "No Update was detected. Moving on."
 fi
