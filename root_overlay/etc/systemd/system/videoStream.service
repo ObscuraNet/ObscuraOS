@@ -1,0 +1,9 @@
+[Unit]
+Description=Start video stream
+
+[Service]
+ExecStart=/bin/rpicam-vid -t 0 --width 1920 --height 1080  -n --framerate 30 --bitrate 8000000 -o udp://0.0.0.0:2116
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
