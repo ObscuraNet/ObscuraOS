@@ -1,9 +1,16 @@
 [Unit]
-Description=Start video stream
+Description=Start Raspberry Pi camera video stream (rpicam-vid)
+After=network-online.target
+Wants=network-online.target
 
 [Service]
-ExecStart=/bin/rpicam-vid -t 0 --width 1920 --height 1080  -n --framerate 30 --bitrate 8000000 -o udp://0.0.0.0:2116
-RemainAfterExit=true
+Type=simple
+# Make sure this path matches where you installed rpicam-vid
+ExecStart=/bin/rpicam-vid   -t 0   --width 1920 --height 1080   --framerate 30   --bitrate 8000000   -n   --codec libav --libav-format mpegts   -o udp://0.0.0.0:2116
+
+# If you ever want it to auto-restart if it crashes:
+Restart=always
+RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target
