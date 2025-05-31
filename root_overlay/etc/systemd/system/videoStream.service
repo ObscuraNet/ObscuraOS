@@ -14,3 +14,12 @@ RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target
+
+
+/bin/rpicam-vid \
+  -t 0 \
+  --width 1920 --height 1080 --framerate 30 --bitrate 8000000 \
+  -n --codec libav \
+  --libav‑video‑codec=h264_v4l2m2m \
+  --libav‑format mpegts \
+  -o udp://0.0.0.0:2116
