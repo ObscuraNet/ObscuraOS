@@ -149,7 +149,7 @@ cp $UPDATE $OUTPUT/$COMMIT_VERSION/
 
 echo "Zipping Update Directory"
 tar -cf - -C $OUTPUT $COMMIT_VERSION/ | xz -9 -e -T0 -c > $OUTPUT/$COMMIT_VERSION.pkg
-
+rm -r $OUTPUT/$COMMIT_VERSION
 
 #------------------------------------------------------------------------------------------------------------------------
 
