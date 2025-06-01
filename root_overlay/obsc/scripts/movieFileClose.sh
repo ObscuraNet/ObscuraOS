@@ -9,16 +9,15 @@ if [ ! -f "$FILE_NAME" ]; then
   exit 1
 fi
 
-# Try to import the key if it exists
+# Import the key if the file exists
 if [ -f "$KEY_FILE" ]; then
   echo "Importing GPG key from $KEY_FILE..."
   gpg --import "$KEY_FILE"
 else
-  echo "No GPG key file found at '$KEY_FILE'. Skipping encryption."
-  exit 0
+  echo "No GPG key file found at '$KEY_FILE'. Assuming key was previously imported."
 fi
 
-# Get recipient from the imported keyring (assumes the key has a usable UID)
+# Get recipient from the keyring (assumes the key has a usable UID)
 RECIPIENT=$(gpg --list-keys --with-colons | awk -F: '/^uid:/ { print $10; exit }')
 
 if [ -z "$RECIPIENT" ]; then
