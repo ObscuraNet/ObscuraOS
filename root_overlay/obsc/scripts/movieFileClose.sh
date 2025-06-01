@@ -1,5 +1,5 @@
 #!/bin/bash
 
-FILE_NAME=$1
+FILE_NAME="$1.mp4"
 
-echo $FILE_NAME >> /var/log/motion/files.txt
+echo $FILE_NAME >> /tmp/files.txt
