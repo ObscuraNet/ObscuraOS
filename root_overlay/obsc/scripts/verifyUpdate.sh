@@ -55,6 +55,8 @@ fi
 
 umount $mount_point
 
+rm /UPDATE
+
 set +e
 
 
