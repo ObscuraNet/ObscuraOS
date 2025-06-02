@@ -3,11 +3,17 @@ An operating system for motion detection cameras build using Raspberry Pi CM4, a
 Build system is buildroot, with a custom overlay to provide fail-safe firmware updates using 2 seperate boot/root partitions.
 Not intended to store footage locally, but send the footage to a remote server for storage.
 
+---
 
+## System Information
+- Static IP Address on end0 192.168.1.19
+- DHCP on end0
+- Set up for Raspberry Pi Camera V3 Currently (Working on Any FIrst Party Camera)
 
+---
 
 ## Building ObscuraOS
----
+
 
 ### Setup Build System
 
