@@ -6,7 +6,7 @@ Not intended to store footage locally, but send the footage to a remote server f
 ---
 
 ## System Information
-- Static IP Address on end0 192.168.1.19
+- Static IP Address on end0 192.168.1.19/24
 - DHCP on end0
 - Set up for Raspberry Pi Camera V3 Currently (Working on Any FIrst Party Camera)
 
