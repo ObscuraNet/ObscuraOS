@@ -16,6 +16,7 @@ dtoverlay=miniuart-bt
 #Enable Camera Support
 camera_auto_detect=1
 dtparam=i2c_arm=on
+gpu_mem=128
 dtoverlay=imx708
 
 
