@@ -1,0 +1,2 @@
+streams:
+    picam_h264: exec:libcamera-vid --width 1920 --height 1080 --bitrate 8000000 --framerate 30 -t 0 --inline -o -
