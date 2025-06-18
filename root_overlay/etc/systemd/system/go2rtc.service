@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 # Make sure this path matches where you installed rpicam-vid
-ExecStart=/usr/bin/go2rtc -c /etc/default/go2rtc.yaml
+ExecStart=/usr/bin/go2rtc -c /obsc/config/go2rtc.yaml
 
 # If you ever want it to auto-restart if it crashes:
 Restart=always
