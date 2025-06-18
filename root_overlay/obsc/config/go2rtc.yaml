@@ -2,9 +2,13 @@ streams:
     picam_h264: exec:libcamera-vid --rotation 180 --width 1920 --height 1080 --bitrate 4000000 --framerate 30 -t 0 --inline -o -
 
 api:
-    listen: ""
+    #listen: "" #<------Disable access to web interface
+    # Username/Password Authentication
+    #username: ""
+    #password: ""
+
 
 rtsp:
   listen: ":8554"    # RTSP Server TCP port, default - 8554
-  username: "admin"  # optional, default - disabled
-  password: "pass"   # optional, default - disabled
+  #username: "admin"  # optional, default - disabled
+  #password: "pass"   # optional, default - disabled
